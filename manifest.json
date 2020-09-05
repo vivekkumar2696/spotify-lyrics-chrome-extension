@@ -1,0 +1,46 @@
+{
+    "name": "Spotify lyrics",
+    "version": "0.1.0",
+    "manifest_version": 2,
+    "description": "It shows lyrics of the current played song.",
+    "permissions": [
+      "storage",
+      "activeTab",
+      "<all_urls>",
+      "webRequest",
+      "webRequestBlocking",
+      "contextMenus"
+    ],
+    "homepage_url": "https://github.com/vivekkumar2696/",
+    "author": "Vivek Kumar",
+    "icons": {
+      "32": "./icons/GitHub-Mark-32px.png",
+      "64": "./icons/GitHub-Mark-64px.png",
+      "128": "./icons/GitHub-Mark-120px-plus.png"
+    },
+    "content_scripts": [
+      {
+        "matches": [
+          "<all_urls>"
+        ],
+        "js": ["./src/content.js"],
+        "css": ["./src/popup.css"]
+      }
+    ],
+    "web_accessible_resources": [
+      "src/popup.html",
+      "popup.css"
+    ],
+    "browser_action": {
+      "default_icon": {
+        "32": "./icons/GitHub-Mark-32px.png",
+        "64": "./icons/GitHub-Mark-64px.png",
+        "128": "./icons/GitHub-Mark-120px-plus.png"
+      },
+      "default_title": "Spotify lyrics: Click to show/hide"
+    },
+    "background": {
+        "scripts":["./src/background.js"],
+        "persistent": true
+    }
+  }

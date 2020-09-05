@@ -1,0 +1,39 @@
+.whole-body {
+    margin: 0;
+    border-radius: 20px;
+}
+
+.lyrics-container {
+    background: black;
+    padding: 20px;
+    color: white;
+    font-size: 18px;
+    border-radius: 20px;
+    font-family: "Circular Spotify Tx T Bold";
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.lyrics-container-title {
+
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+    border-radius: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
