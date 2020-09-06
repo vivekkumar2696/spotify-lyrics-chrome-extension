@@ -14,6 +14,10 @@ chrome.runtime.onMessage.addListener(function(msg, sender){
 		chrome.storage.local.set({'song_icon': songIcon});
 		chrome.storage.local.set({'song_text': songText});
 	}
+	else if(msg == "remove_iframe") {
+		console.log("remove");
+		remove_iframe();
+	}
 })
 
 // Initialize an iframe for sidebar
@@ -38,6 +42,10 @@ function toggle() {
 	else{
 		repoContentIframe.style.width="0px";
 	}
+}
+
+function remove_iframe() {
+	repoContentIframe.style.width="0px";
 }
 
 function extractSongInfoLayer() {

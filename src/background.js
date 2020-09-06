@@ -21,6 +21,13 @@ chrome.browserAction.onClicked.addListener(function(){
     })
 });
 
+var curActiveTabId = 0;
+chrome.tabs.onActivated.addListener(function(activeInfo) {
+  chrome.tabs.sendMessage(curActiveTabId, "remove_iframe");
+  curActiveTabId = activeInfo.tabId;
+  console.log(activeInfo.tabId);
+});
+
 'use strict';
 
 const prefs = {
