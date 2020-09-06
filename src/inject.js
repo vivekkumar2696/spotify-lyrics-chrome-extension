@@ -10,6 +10,12 @@ function getRepoData() {
 			document.getElementById("lyricsContainer").style.backgroundImage = "linear-gradient(rgba(0,0,0,.6), rgba(0,0,0,.6)), url('" + res.song_icon.replace("4851","1e02") +"')";
 		});
 	});
+
+	chrome.storage.local.get('song_text', function(result) {
+		var song_text = result.song_text;
+        str = "<div>"+ song_text +"</div>";
+		document.getElementById("song").innerHTML = str;
+	});
 }
 
 getRepoData();

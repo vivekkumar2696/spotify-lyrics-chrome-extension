@@ -14,9 +14,9 @@
     "homepage_url": "https://github.com/vivekkumar2696/",
     "author": "Vivek Kumar",
     "icons": {
-      "32": "./icons/GitHub-Mark-32px.png",
-      "64": "./icons/GitHub-Mark-64px.png",
-      "128": "./icons/GitHub-Mark-120px-plus.png"
+      "32": "./icons/spotify-sketch.png",
+      "64": "./icons/spotify-sketch.png",
+      "128": "./icons/spotify-sketch.png"
     },
     "content_scripts": [
       {
@@ -33,14 +33,32 @@
     ],
     "browser_action": {
       "default_icon": {
-        "32": "./icons/GitHub-Mark-32px.png",
-        "64": "./icons/GitHub-Mark-64px.png",
-        "128": "./icons/GitHub-Mark-120px-plus.png"
+        "32": "./icons/spotify-sketch.png",
+        "64": "./icons/spotify-sketch.png",
+        "128": "./icons/spotify-sketch.png"
       },
       "default_title": "Spotify lyrics: Click to show/hide"
     },
     "background": {
         "scripts":["./src/background.js"],
         "persistent": true
+    },
+    "commands": {
+      "_execute_browser_action": {
+        "suggested_key": {
+          "windows": "Alt+L",
+          "mac": "Alt+L",
+          "chromeos": "Alt+L",
+          "linux": "Alt+L"
+        }
+      },
+      "_execute_page_action": {
+        "suggested_key": {
+          "windows": "Alt+K",
+          "mac": "Alt+K",
+          "chromeos": "Alt+K",
+          "linux": "Alt+K"
+        }
+      }
     }
   }
