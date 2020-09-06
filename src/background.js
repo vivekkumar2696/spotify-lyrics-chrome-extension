@@ -24,8 +24,10 @@ chrome.browserAction.onClicked.addListener(function(){
 var curActiveTabId = 0;
 chrome.tabs.onActivated.addListener(function(activeInfo) {
   chrome.tabs.sendMessage(curActiveTabId, "remove_iframe");
+  console.log(curActiveTabId);
   curActiveTabId = activeInfo.tabId;
-  console.log(activeInfo.tabId);
+  console.log(activeInfo);
+  chrome.tabs.sendMessage(curActiveTabId, "toggle");
 });
 
 'use strict';
