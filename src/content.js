@@ -3,7 +3,6 @@
 ** On Click listener to toggle the side bar
 **/
 chrome.runtime.onMessage.addListener(function(msg, sender){
-	console.log("out toggle");
 	if(msg == "toggle"){
 		extractSongInfoLayer();
 		toggle();
@@ -11,12 +10,10 @@ chrome.runtime.onMessage.addListener(function(msg, sender){
 	else if(msg == "get_spotify_data"){
 		var songText = document.getElementsByClassName("now-playing")[0].innerText.replace(/\n/g, " ");
 		var songIcon = document.getElementsByClassName("now-playing")[0].getElementsByTagName('img')[0].src;
-		console.log(songText, songIcon);
 		chrome.storage.local.set({'song_icon': songIcon});
 		chrome.storage.local.set({'song_text': songText});
 	}
 	else if(msg == "remove_iframe") {
-		console.log("remove");
 		remove_iframe();
 	}
 })

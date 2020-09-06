@@ -1,7 +1,6 @@
 var win = undefined;
 chrome.browserAction.onClicked.addListener(function() {
     if(win != undefined) {
-      console.log("here1", win);
       chrome.windows.remove(win.id, function(){});
       win=undefined;
     }
@@ -15,7 +14,6 @@ chrome.browserAction.onClicked.addListener(function() {
           }
 
           if (urlRegex.test(tab.url)) {
-            console.log("inside  spot");
             chrome.tabs.sendMessage(tab.id, "get_spotify_data");
           }
         });
@@ -39,9 +37,7 @@ chrome.browserAction.onClicked.addListener(function() {
 var curActiveTabId = 0;
 // chrome.tabs.onActivated.addListener(function(activeInfo) {
 //   chrome.tabs.sendMessage(curActiveTabId, "remove_iframe");
-//   console.log(curActiveTabId);
 //   curActiveTabId = activeInfo.tabId;
-//   console.log(activeInfo);
 //   chrome.tabs.sendMessage(curActiveTabId, "toggle");
 // });
 
