@@ -15,3 +15,5 @@ Get lyrics of the current playing song in Spotify Web - WIP
 2. Go to chrome extensions [chrome://extensions](chrome://extensions)
 3. Enable developer mode
 4. Click on load unpacked extension and select this cloned repository
+
+Currently, in order to get the lyrics of songs, code scraps data from https://google.com.
